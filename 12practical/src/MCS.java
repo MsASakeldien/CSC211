@@ -19,9 +19,7 @@ public class MCS {
             }
         }
 
-
-
-
+        counter();
 
     }
     public static void On3(int[] array){
@@ -130,7 +128,4 @@ public class MCS {
                     n, countN3, countN2a, countN2b, countN);
         }
     }
-    }
-
-
 }
