@@ -20,6 +20,9 @@ public class MCS {
         }
 
 
+
+
+
     }
     public static void On3(int[] array){
         int n = array.length;
@@ -89,4 +92,45 @@ public class MCS {
         }
         System.out.println(maxSoFar);
     }
+
+    public static void counter(){
+        int[] sizes = {100, 1000, 10000, 100000, 1000000};
+
+        System.out.printf("%-10s %-15s %-15s %-15s %-15s%n",
+                "n", "O(n^3)", "O(n^2)", "O(n^2)", "O(n)");
+
+        for (int n : sizes) {
+
+            long countN3 = 0;
+            long countN2a = 0;
+            long countN2b = 0;
+            long countN = 0;
+
+            // 🔹 O(n^3)
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    for (int k = 0; k < n; k++)
+                        countN3++;
+
+            // 🔹 O(n^2) version 1
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    countN2a++;
+
+            // 🔹 O(n^2) version 2
+            for (int i = 0; i < n; i++)
+                for (int j = i; j < n; j++)
+                    countN2b++;
+
+            // 🔹 O(n)
+            for (int i = 0; i < n; i++)
+                countN++;
+
+            System.out.printf("%-10d %-15d %-15d %-15d %-15d%n",
+                    n, countN3, countN2a, countN2b, countN);
+        }
+    }
+    }
+
+
 }
